@@ -41,7 +41,19 @@ namespace AoC2017
             switch (puzzle)
             {
                 case 1:
-                    Console.WriteLine("Sum is: " + Puzzle1.Solve(PuzzleResources.GetPuzzle1));
+                    Console.WriteLine("Puzzle 1 solutions");
+                    Console.WriteLine("Part 1 sum is: " + Puzzle1.SolvePart1(PuzzleResources.GetPuzzle1));
+                    Console.WriteLine("Part 2 sum is: " + Puzzle1.SolvePart2(PuzzleResources.GetPuzzle1));
+                    break;
+                case 2:
+                    Console.WriteLine("Puzzle 2 solutions");
+                    Console.WriteLine("Part 1 sum is: " + Puzzle2.SolvePart1(PuzzleResources.GetPuzzle2));
+                    Console.WriteLine("Part 2 sum is: " + Puzzle2.SolvePart2(PuzzleResources.GetPuzzle2));
+                    break;
+                case 3:
+                    Console.WriteLine("Puzzle 3 solutions");
+                    Console.WriteLine("Part 1 sum is: " + Puzzle3.SolvePart1(PuzzleResources.GetPuzzle3));
+                    Console.WriteLine("Part 2 sum is: " + Puzzle3.SolvePart2(PuzzleResources.GetPuzzle3));
                     break;
             }
         }

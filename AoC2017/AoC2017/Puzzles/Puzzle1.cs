@@ -5,7 +5,7 @@ namespace AoC2017.Puzzles
 {
     public class Puzzle1
     {
-        public static int Solve(string input)
+        public static int SolvePart1(string input)
         {
             input += input[0];
             int length = input.Length;
@@ -21,6 +21,20 @@ namespace AoC2017.Puzzles
                 else
                 {
                     current = next;
+                }
+            }
+            return sum;
+        }
+
+        public static int SolvePart2(string input)
+        {
+            int halfway = input.Length / 2;
+            int sum = 0;
+            for (int i = 0; i < halfway; i++)
+            {
+                if (input[i] == input[i + halfway])
+                {
+                    sum += (input[i] - 48) * 2;
                 }
             }
             return sum;
