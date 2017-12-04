@@ -1,45 +1,82 @@
-﻿using System;
-using System.Net.Configuration;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace AoC2017.Puzzles
 {
     public class Puzzle4
     {
-        public static bool SolvePart1(string line)
+        public static int SolvePart1()
         {
-            int radius = 0;
-            bool found = false;
-            while (!found)
-            {
-                if (input - (radius * 2 + 1) * (radius * 2 + 1) < 0)
-                {
-                    found = true;
-                }
-                else
-                {
-                    radius++;
-                }
-            }
-            int pos = input - ((radius - 1) * 2 + 1) * ((radius - 1) * 2 + 1);
-            int steps = pos == 0 ? (radius - 1) * 2 : radius * 2;
-            int delta = -1;
             int count = 0;
-            int sides = (int) Math.Floor((double) pos / (radius * 2));
-            pos = pos - sides * radius * 2;
-            while (pos != 0)
+            StreamReader sr = new StreamReader("Puzzle4.txt");
+            string line = sr.ReadLine();
+            while (!string.IsNullOrEmpty(line))
             {
-                steps += delta;
-                pos--;
-                count++;
-                if (count == radius)
+                if (IsLineCorrect1(line.Split(' ').ToList()))
                 {
-                    delta = -delta;
-                    count = 0;
+                    count++;
                 }
+                line = sr.ReadLine();
             }
-            return steps;
+            return count;
         }
 
-        public static bool 
+        public static bool IsLineCorrect1(List<string> words)
+        {
+            while (words.Count > 1)
+            {
+                string word = words[0];
+                words.RemoveAt(0);
+                if (words.Contains(word))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static int SolvePart2()
+        {
+            int count = 0;
+            StreamReader sr = new StreamReader("Puzzle4.txt");
+            string line = sr.ReadLine();
+            while (!string.IsNullOrEmpty(line))
+            {
+                if (IsLineCorrect2(line.Split(' ').ToList()))
+                {
+                    count++;
+                }
+                line = sr.ReadLine();
+            }
+            return count;
+        }
+
+        public static bool IsLineCorrect2(List<string> words)
+        {
+            for (int i = 0; i < words.Count; i++)
+            {
+                string word = words[i];
+                for (int j = i + 1; j < words.Count; j++)
+                {
+                    string checkWord = words[j];
+                    if (checkWord.Length == word.Length)
+                    {
+                        foreach (char c in word)
+                        {
+                            if (checkWord.Contains(c))
+                            {
+                                checkWord = checkWord.Remove(checkWord.IndexOf(c), 1);
+                            }
+                        }
+                        if (checkWord.Length == 0)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
     }
 }

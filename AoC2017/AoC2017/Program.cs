@@ -29,7 +29,8 @@ namespace AoC2017
         {
             Console.WriteLine("Advent of Code   MAIN MENU");
             Console.WriteLine("Type in the puzzle number to solve");
-            if (int.TryParse(Console.ReadLine(), out int puzzle))
+            int puzzle;
+            if (int.TryParse(Console.ReadLine(), out puzzle))
             {
                 return puzzle;
             }
@@ -54,6 +55,11 @@ namespace AoC2017
                     Console.WriteLine("Puzzle 3 solutions");
                     Console.WriteLine("Part 1 sum is: " + Puzzle3.SolvePart1(PuzzleResources.GetPuzzle3));
                     Console.WriteLine("Part 2 sum is: " + Puzzle3.SolvePart2(PuzzleResources.GetPuzzle3));
+                    break;
+                case 4:
+                    Console.WriteLine("Puzzle 4 solutions");
+                    Console.WriteLine("Part 1 count is: " + Puzzle4.SolvePart1());
+                    Console.WriteLine("Part 2 count is: " + Puzzle4.SolvePart2());
                     break;
             }
         }
