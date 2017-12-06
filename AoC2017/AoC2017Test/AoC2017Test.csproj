@@ -54,6 +54,7 @@
     <Compile Include="Puzzle5.cs" />
     <Compile Include="Puzzle4.cs" />
     <Compile Include="Puzzle3.cs" />
+    <Compile Include="Puzzle6.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

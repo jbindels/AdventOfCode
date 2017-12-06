@@ -66,6 +66,11 @@ namespace AoC2017
                     Console.WriteLine("Part 1 stepcount is: " + Puzzle5.SolvePart1(PuzzleResources.GetPuzzle5));
                     Console.WriteLine("Part 2 stepcount is: " + Puzzle5.SolvePart2(PuzzleResources.GetPuzzle5));
                     break;
+                case 6:
+                    Console.WriteLine("Puzzle 6 solutions");
+                    Console.WriteLine("Part 1 stepcount is: " + Puzzle6.SolveParts(PuzzleResources.GetPuzzle6, false));
+                    Console.WriteLine("Part 2 stepcount is: " + Puzzle6.SolveParts(PuzzleResources.GetPuzzle6, true));
+                    break;
             }
         }
     }
