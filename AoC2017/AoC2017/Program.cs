@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AoC2017.Puzzles;
 
 namespace AoC2017
@@ -95,6 +96,16 @@ namespace AoC2017
                     Console.WriteLine("Puzzle 11 solutions");
                     Console.WriteLine("Part 1 steps is: " + Puzzle11.Solve(PuzzleResources.Puzzle11, false));
                     Console.WriteLine("Part 2 max steps is: " + Puzzle11.Solve(PuzzleResources.Puzzle11, true));
+                    break;
+                case 12:
+                    Console.WriteLine("Puzzle 12 solutions");
+                    Console.WriteLine("Part 1 count is: " + Puzzle12.Solve(new List<int>() {0}, false));
+                    Console.WriteLine("Part 1 count is: " + Puzzle12.Solve(new List<int>() {0}, false));
+                    break;
+                case 13:
+                    Console.WriteLine("Puzzle 13 solutions");
+                    Console.WriteLine("Part 1 severity is: " + Puzzle13.Solve1(PuzzleResources.Puzzle13));
+                    Console.WriteLine("Part 1 required delay is: " + Puzzle13.Solve2(PuzzleResources.Puzzle13));
                     break;
             }
         }

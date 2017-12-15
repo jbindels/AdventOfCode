@@ -47,6 +47,9 @@
     <Compile Include="PuzzleResources.cs" />
     <Compile Include="Puzzles\Puzzle1.cs" />
     <Compile Include="Puzzles\Puzzle10.cs" />
+    <Compile Include="Puzzles\Puzzle14.cs" />
+    <Compile Include="Puzzles\Puzzle13.cs" />
+    <Compile Include="Puzzles\Puzzle12.cs" />
     <Compile Include="Puzzles\Puzzle11.cs" />
     <Compile Include="Puzzles\Puzzle9.cs" />
     <Compile Include="Puzzles\Puzzle8.cs" />
